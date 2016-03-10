@@ -4,7 +4,7 @@ Front-end test
 Caro programador, o objetivo desse teste é conhecer um pouco mais sobre suas habilidades. No Artyou nós sempre prezamos pela excelência. Qualidade de código é algo que nos deixa mais felizes, além de entregar mais valor aos nossos clientes. Com isso em mente, queremos avaliar como você resolve o problema designado.
 
 ### A tarefa
-A tarefa é simples, pensamos num teste que não seja massante, que seja divertido de produzir mas que ao mesmo tempo nos de visibilidade sobre suas características de desenvolvimento. A ideia é construiu uma mini-aplicação usando AngularJS (de preferência, mas sinta-se a vontade para utilizar outro framework) consumindo uma API pública chamada Netflix Roulette ( http://netflixroulette.net/api/ ). Essa API retorna um título aleatório do Netflix de acordo com alguns filtros opcionais. Com base nessas informações queremos que você desenvolva as features abaixo (as que você conseguir):
+A tarefa é simples, pensamos num teste que não seja massante, que seja divertido de produzir mas que ao mesmo tempo nos de visibilidade sobre suas características de desenvolvimento. A ideia é construir uma mini-aplicação usando AngularJS (de preferência, mas sinta-se a vontade para utilizar outro framework) consumindo uma API pública chamada Netflix Roulette ( http://netflixroulette.net/api/ ). Essa API retorna um título aleatório do Netflix de acordo com alguns filtros opcionais. Com base nessas informações queremos que você desenvolva as features abaixo (as que você conseguir):
 
 - Ao clicar num botão exibir os dados do filme/série com título, avaliação, imagem e link para assistir no netflix
 - Opção de filtrar pelo gênero
