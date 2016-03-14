@@ -1,0 +1,75 @@
+<main>
+
+  <ay-header></ay-header>
+
+  <section class="ay-netflix-search">
+    <div class="container">
+      <div class="row">
+
+        <h2 class="ay-netflix-search--title">Search for Something</h2>
+        <form class="ay-netflix-search--form">
+
+          <select ng-model="netflix.searchResult" ng-change="selectChanged()">
+            <option ng-repeat="type in netflix.types" ng-selected="{{type.valueSend}}" value="{{type.valueSend}}">
+              {{type.valueShow}}
+            </option>
+          </select>
+
+          <input type="text" ng-model="netflix.searchResult2" placeholder="Make your search :)">
+          <button ng-click="netflix.searchNetflix()">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ay-netflix-result">
+    <div class="container">
+      <div class="row">
+
+        <article class="ay-netflix-result--empty">
+          <span ng-if="!netflix.searchResult.length">Please select a option</span>
+          <span ng-if="!netflix.searchResult2.length">And make your Search :)</span>
+        </article>
+
+
+        <span class="ay-netflix-result--error">{{netflix.ResultSearchError}}</span>
+
+        <ul class="ay-netflix-result--list">
+          <li ng-show="netflix.searchResult !== 'title'" ng-repeat="result in netflix.ResultSearch" class="list--cards col-md-3" >
+            <figure>
+              <img ng-src="{{result.poster}}" fallback-src="assets/images/image-not-found.jpg">
+              <figcaption>
+                <h3>{{result.show_title}}</h3>
+                <p><span>Category: </span>{{result.category}}</p>
+                <p><span>Average: </span>{{result.rating}}</p>
+                <p><span>Release Year: </span>{{result.release_year}}</p>
+                <p><span>Summary: </span>{{result.summary}}</p>
+                <a href="https://netflix.com/watch/{{result.show_id}}?trackId={{result.show_id}}" target="_blank">Watch on Netflix</a>
+              </figcaption>
+            </figure>
+          </li>
+
+          <li ng-show="netflix.searchResult === 'title'" class="list--cards col-md-12">
+            <!-- <h2>{{netflix.ResultSearch.show_title}}</h2> -->
+            <figure>
+              <img ng-src="{{netflix.ResultSearch.poster}}" fallback-src="assets/images/image-not-found.jpg">
+              <figcaption>
+                <h3>{{netflix.ResultSearch.show_title}}</h3>
+                <p><span>Category: </span>{{netflix.ResultSearch.category}}</p>
+                <p><span>Average: </span>{{netflix.ResultSearch.rating}}</p>
+                <p><span>Release Year: </sspan>{{netflix.ResultSearch.release_year}}</p>
+                <p><span>Summary: </span>{{netflix.ResultSearch.summary}}</p>
+                <a href="https://netflix.com/watch/{{netflix.ResultSearch.show_id}}?trackId={{netflix.ResultSearch.show_id}}" target="_blank">Watch on Netflix</a>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+
+
+</main>
