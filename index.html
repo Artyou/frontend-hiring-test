@@ -4,17 +4,42 @@
 	<meta charset="UTF-8">
 	<title>Netflix API</title>
 	<link rel="stylesheet" href="app/libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="app/css/main.css">
 </head>
 <body>
-	<div class="container">
+	<div class="container" data-ng-controller='GithubController' ng-init="$scope.steps">
 		<header>
-			<div class="row">
-				
+			<div class="row contentMap">
+				<div class="form-inline">
+					<div class="form-group">
+				    <label for="exampleInputEmail1">Site address</label>
+				    <select ng-options="size as size.name for size in sizes " ng-model="item" ng-change="sendMessage()"></select>
+				  </div>
+				  <button class="btn btn-primary" ng-click="sendMessage()">Pesquisar</button>
+			  </div>
 			</div>
 		</header>
+		<section>
+			<div class="row">
+				<div ng-show="loading" class="loading">LOADING...</div>
+					<div ng-show="!loading">
+					<div class="col-md-3">
+						<img class="img-responsive" src="{{data.poster}}" alt="">
+					</div>
+					<div class="col-md-9">
+						<h4>{{data.show_title}}</h4>
+						<p>Ano: {{data.release_year}}</p>
+						<p>Categoria: {{data.category}}</p>
+						<p>Rating: {{data.category}}</p>
+						<a href="http://www.netflix.com/WiPlayer?movieid={{step.show_id}}" class="btn btn-primary">Assistir</a>
+					</div>
+				</div>
+			</div>
+		</section>
 	</div>
 	<script src="app/libs/angular/angular.js"></script>
 	<script src="app/js/main.js"></script>
 	<script src="app/modules/request/request.module.js"></script>
+	<script src="app/libs/multiselect/isteven-multi-select.js"></script>   
 </body>
 </html>
