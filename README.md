@@ -20,11 +20,19 @@ bower install
 
 Através do Grunt, podemos inicializar um servidor na porta 9000, além de algumas configurações na etapa de desenvolvimento.
 
-Para executar, utilize o comando:
+Para instalar as dependências do Grunt, utilize o comando:
+```
+npm install
+```
+Após instalar todas as libs, você pode iniciar o servidor para realizar o projeto.
+
+#### Servidor
+
+Para iniciar o servidor, utilize o seguinte comando:
+
 ```
 grunt
 ```
-
 
 O servidor irá iniciar na porta 9000.
 
