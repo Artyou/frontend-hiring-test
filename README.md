@@ -24,9 +24,13 @@ Para executar, utilize o comando:
 ```
 grunt
 ```
-##### Opcional
-Para rodar o servidor grunt, utilize o comando: grunt
 
-Irá iniciar um servidor na porta 9000.
 
+O servidor irá iniciar na porta 9000.
+
+####
+
+A Aplicação foi construída através da API Roulette do Netflix, através de uma requisição Ajax, utilizando o Angular, foi criado um serviço que fornece os dados pesquisados pelo usuário e envia para a API, que por sua vez retorna os resultados através consultados pelo serviço.
+
+O usuário tem a opção de filtrar por tipo de dados, avaliação dos usuários, nome do Ator ou Diretor.
 
