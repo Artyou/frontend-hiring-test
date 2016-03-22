@@ -1,4 +1,4 @@
 (function () {
-angular.module('requestModule', [])  
+angular.module('requestModule', []);  
 
 })();

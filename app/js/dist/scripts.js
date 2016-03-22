@@ -1,3 +1,8 @@
+(function () {
+angular.module('requestModule', []);  
+
+})();
+
 angular.module("requestModule").controller('GithubController', GithubController);
 
 function GithubController($scope, $http) {
@@ -54,3 +59,20 @@ function GithubController($scope, $http) {
 }
 
 GithubController.$inject = ['$scope', '$http'];
+angular.module("requestModule").directive("showResults", function() {
+	return {
+		templateUrl: "app/modules/request/results.view.html",
+		replace: true,
+		restric: "E",
+		controllerAs: "GithubController"
+	};
+});
+
+
+angular.module("requestModule").directive("uiAlert", function () {
+	return {
+		templateUrl: "app/modules/request/alert.view.html",
+		replace: true,
+		restric: "E"
+	};
+});

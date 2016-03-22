@@ -5,8 +5,8 @@ Aplicação desenvolvida através da API Roulette do Netflix.
 
 ### Dependências
 
-- Bower (caso não tenha instalado, utilize o [tutorial](http://bower.io/#install-bower)
-- Grunt (caso não tenha instalado, utilize o [tutorial](http://gruntjs.com/installing-grunt)
+- Bower (caso não tenha instalado, utilize o [tutorial](http://bower.io/#install-bower))
+- Grunt (caso não tenha instalado, utilize o [tutorial](http://gruntjs.com/installing-grunt))
 
 ### Bower
 
