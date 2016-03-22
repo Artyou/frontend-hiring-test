@@ -7,32 +7,81 @@
 	<link rel="stylesheet" href="app/css/main.css">
 </head>
 <body>
-	<div class="container" data-ng-controller='GithubController' ng-init="$scope.steps">
+	<div data-ng-controller='GithubController as vm' ng-init="$scope.steps">
 		<header>
-			<div class="row contentMap">
-				<div class="form-inline">
-					<div class="form-group">
-				    <label for="exampleInputEmail1">Site address</label>
-				    <select ng-options="size as size.name for size in sizes " ng-model="item" ng-change="sendMessage()"></select>
-				  </div>
-				  <button class="btn btn-primary" ng-click="sendMessage()">Pesquisar</button>
-			  </div>
-			</div>
+			<div class="jumbotron">
+				<img src="app/img/logo.png" alt="">
+			</div>		
 		</header>
+		<section id="search">
+			<div class="container">
+				<div class="row contentMap">
+					
+					<div class="c-inputs-stacked">
+					  <label class="c-input c-radio"> 
+					    <input id="radioStacked1" name="radio-stacked" type="radio" ng-value="0" ng-model="search.typeOf">
+					    <span class="c-indicator"></span>
+					    Show Movies
+					  </label>
+					  <label class="c-input c-radio">
+					    <input id="radioStacked2" name="radio-stacked" type="radio" ng-value="1" ng-model="search.typeOf">
+					    <span class="c-indicator"></span>
+					    Show TV Series
+					  </label>
+					</div>
+					<div class="form-inline">
+						<div class="form-group">
+							<label for="">Actor</label>
+							<input type="text" placeholder="Actor's name" class="form-control" id="name_actor" ng-model="search.actor">
+							<div my-directive class='directive'></div>
+						</div>
+						<div class="form-group">
+							<label for="">Director</label>
+							<input type="text" placeholder="Director's name" class="form-control" id="name_director" ng-model="search.director">
+						</div>
+						<div class="form-group">
+					    <label for="exampleInputEmail1">Rating</label>
+					    <select class="c-select" ng-model="search.minRatings">
+					    	<option value="1" selected="true">1</option>
+					    	<option value="2">2</option>
+					    	<option value="3">3</option>
+					    	<option value="4">4</option>
+					    	<option value="5">5</option>	    	
+					    </select>
+					  </div>
+					  <div class="form-group">
+					    <label for="exampleInputEmail1">Rating</label>
+
+					    <select class="c-select" ng-model="search.maxRatings">
+					    	<option value="1" ng-selected="selected">1</option>
+					    	<option value="2">2</option>
+					    	<option value="3">3</option>
+					    	<option value="4">4</option>
+					    	<option value="5" selected>5</option>	    	
+					    </select>
+					  </div>
+					  <button class="btn btn-primary" ng-click="sendMessage(search)">Pesquisar</button>
+				  </div>
+				</div>
+			</div>
+		</section>
 		<section>
-			<div class="row">
-				<div ng-show="loading" class="loading">LOADING...</div>
-					<div ng-show="!loading">
-					<div class="col-md-3">
-						<img class="img-responsive" src="{{data.poster}}" alt="">
+			<div class="container">
+				<div class="row">
+					<div ng-if="loading" class="loading">
+						<div class="bubblingG">
+							<span id="bubblingG_1">
+							</span>
+							<span id="bubblingG_2">
+							</span>
+							<span id="bubblingG_3">
+							</span>
+						</div>
 					</div>
-					<div class="col-md-9">
-						<h4>{{data.show_title}}</h4>
-						<p>Ano: {{data.release_year}}</p>
-						<p>Categoria: {{data.category}}</p>
-						<p>Rating: {{data.category}}</p>
-						<a href="http://www.netflix.com/WiPlayer?movieid={{step.show_id}}" class="btn btn-primary">Assistir</a>
-					</div>
+					
+					<show-results></show-results>
+					<ui-alert></ui-alert>
+					
 				</div>
 			</div>
 		</section>
@@ -40,6 +89,8 @@
 	<script src="app/libs/angular/angular.js"></script>
 	<script src="app/js/main.js"></script>
 	<script src="app/modules/request/request.module.js"></script>
-	<script src="app/libs/multiselect/isteven-multi-select.js"></script>   
+	<script src="app/modules/request/results.controller.js"></script>
+	<script src="app/modules/request/uialert.directive.js"></script>
+	<script src="app/modules/request/results.directive.js"></script>
 </body>
 </html>
