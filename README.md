@@ -1,26 +1,44 @@
 Front-end test
 ==============
 
-Caro programador, o objetivo desse teste é conhecer um pouco mais sobre suas habilidades. No Artyou nós sempre prezamos pela excelência. Qualidade de código é algo que nos deixa mais felizes, além de entregar mais valor aos nossos clientes. Com isso em mente, queremos avaliar como você resolve o problema designado.
+Aplicação desenvolvida através da API Roulette do Netflix.
 
-### A tarefa
-A tarefa é simples, pensamos num teste que não seja massante, que seja divertido de produzir mas que ao mesmo tempo nos de visibilidade sobre suas características de desenvolvimento. A ideia é construir uma mini-aplicação usando AngularJS (de preferência, mas sinta-se a vontade para utilizar outro framework) consumindo uma API pública chamada Netflix Roulette ( http://netflixroulette.net/api/ ). Essa API retorna um título aleatório do Netflix de acordo com alguns filtros opcionais. Com base nessas informações queremos que você desenvolva as features abaixo (as que você conseguir):
+### Dependências
 
-- Ao clicar num botão exibir os dados do filme/série com título, avaliação, imagem e link para assistir no netflix
-- Opção de filtrar pelo gênero
-- Opção de filtrar por filmes, séries ou ambos
-- Opção de filtrar pela avaliação do título (1 a 5)
-- Opção de filtrar por diretor/ator
+- Bower (caso não tenha instalado, utilize o [tutorial](http://bower.io/#install-bower))
+- Grunt (caso não tenha instalado, utilize o [tutorial](http://gruntjs.com/installing-grunt))
 
-##### Atenção
-Apesar de ser uma atividade simples, é muito importante que você nos mostre o seu conhecimento sobre boas práticas de programação, como por exemplo **testes** e patterns.
+### Bower
 
-Além disso, algumas coisas bem legais e que contariam como um plus seriam:
-- componentização (http://talyssonoc.github.io/2015/11/30/Angular-por-um-desenvolvedor-React-1-Componentizacao/)
-- utilização de uma ferramenta de automação de tarefas (gulp, grunt, broccoli, webpack)
-- utilização de pré processadores (html e/ou css)
+Através do Bower vamos instalar as libs que o projeto necessita para rodar (Ex: AngularJS).
 
-### Como começar
-Para começar, crie um fork desse repositório, implemente sua soluçao e então nos envie um Pull Request. No Readme, liste as features que você desenvolveu e coloque as instruções de como rodar o projeto.
+Para executar, utilize o seguinte comando:
+```
+bower install
+```
+### Grunt
 
-Nós do Artyou lhe desejamos boa sorte.
+Através do Grunt, podemos inicializar um servidor na porta 9000, além de algumas configurações na etapa de desenvolvimento.
+
+Para instalar as dependências do Grunt, utilize o comando:
+```
+npm install
+```
+Após instalar todas as libs, você pode iniciar o servidor para realizar o projeto.
+
+#### Servidor
+
+Para iniciar o servidor, utilize o seguinte comando:
+
+```
+grunt
+```
+
+O servidor irá iniciar na porta 9000.
+
+####
+
+A Aplicação foi construída através da API Roulette do Netflix, através de uma requisição Ajax, utilizando o Angular, foi criado um serviço que fornece os dados pesquisados pelo usuário e envia para a API, que por sua vez retorna os resultados através consultados pelo serviço.
+
+O usuário tem a opção de filtrar por tipo de dados, avaliação dos usuários, nome do Ator ou Diretor.
+
