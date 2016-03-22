@@ -14,7 +14,6 @@ Através do Bower vamos instalar as libs que o projeto necessita para rodar (Ex:
 
 Para executar, utilize o seguinte comando:
 ```
-#!terminal
 bower install
 ```
 ### Grunt
@@ -22,9 +21,9 @@ bower install
 Através do Grunt, podemos inicializar um servidor na porta 9000, além de algumas configurações na etapa de desenvolvimento.
 
 Para executar, utilize o comando:
-
+```
 grunt
-
+```
 ##### Opcional
 Para rodar o servidor grunt, utilize o comando: grunt
 
